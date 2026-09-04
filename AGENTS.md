@@ -1,3 +1,10 @@
+## IMPORTANT
+
+- No ejecutes comandos como `build`, `dev`, `start`, `install` o `test` sin que el usuario lo solicite explicitamente.
+- Para validacion solo ejecuta `lint` (`pnpm lint`) para buscar errores en el codigo escrito.
+- Si necesitas validar cambios, usa solo herramientas de lectura (`read_file`, `grep_search`, `get_errors`).
+- Un hook de VS Code (`PreToolUse`) requiere aprobacion automatica para estos comandos.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
