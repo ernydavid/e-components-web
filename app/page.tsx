@@ -90,7 +90,7 @@ function InstallCommand() {
     <button
       type="button"
       onClick={copy}
-      className="group inline-flex w-full max-w-md items-center gap-2 rounded-4xl border border-border bg-input/30 px-4 py-2.5 text-left font-mono text-xs text-muted-foreground transition-colors hover:border-ring/60 hover:bg-input/50"
+      className="group inline-flex w-full max-w-xs md:max-w-md items-center gap-2 rounded-4xl border border-border bg-input/30 px-4 py-2.5 text-left font-mono text-xs text-muted-foreground transition-colors hover:border-ring/60 hover:bg-input/50"
     >
       <span className="truncate">$ {INSTALL_CMD}</span>
       <span className="ml-auto shrink-0 text-foreground/70">
