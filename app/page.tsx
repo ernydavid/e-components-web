@@ -30,9 +30,10 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { LogoMain } from "@/components/logo-main";
 
 const DynamicThemeToggle = dynamic(
-  () => import("@/app/theme-toggle").then((mod) => mod.ThemeToggle),
+  () => import("@/components/theme-toggle").then((mod) => mod.ThemeToggle),
   { ssr: false },
 );
 
@@ -67,7 +68,7 @@ const FEATURES = [
 ];
 
 const NAV_LINKS = [
-  { label: "Components", href: "#components" },
+  { label: "Components", href: "/components" },
   { label: "Install", href: "#install" },
   { label: "Themes", href: "#themes" },
 ];
@@ -104,8 +105,8 @@ export default function Page() {
     <div className="flex min-h-dvh flex-col">
       {/* Nav */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-md">
-        <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-6">
-          <a
+        <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-6 2xl:px-0">
+          {/* <a
             href="#"
             className="flex items-center gap-2 font-heading text-lg font-semibold tracking-tight"
           >
@@ -113,7 +114,9 @@ export default function Page() {
               e
             </span>
             <span>e.components</span>
-          </a>
+          </a> */}
+
+          <LogoMain />
 
           <div className="hidden items-center gap-1 md:flex">
             {NAV_LINKS.map((link) => (
@@ -154,7 +157,7 @@ export default function Page() {
       </header>
 
       {/* Hero */}
-      <section className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 pb-16 text-center sm:pt-32">
+      <section className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 2xl:px-0 pt-24 pb-16 text-center sm:pt-32">
         <Badge variant="outline" className="mb-6 gap-1.5 px-3 py-1">
           <HugeiconsIcon icon={SparklesIcon} size={13} />
           New — Base UI + Maia theme
@@ -191,14 +194,18 @@ export default function Page() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
-          {["shadcn/ui", "Base UI", "Tailwind v4", "Next.js", "Dark mode"].map(
-            (t) => (
-              <span key={t} className="inline-flex items-center gap-1.5">
-                <HugeiconsIcon icon={CheckmarkCircle01Icon} size={13} />
-                {t}
-              </span>
-            ),
-          )}
+          {[
+            "shadcn/ui",
+            "Base UI",
+            "Tailwind v4",
+            "React/Next.js",
+            "Dark mode",
+          ].map((t) => (
+            <span key={t} className="inline-flex items-center gap-1.5">
+              <HugeiconsIcon icon={CheckmarkCircle01Icon} size={13} />
+              {t}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -207,7 +214,7 @@ export default function Page() {
       {/* Features */}
       <section
         id="components"
-        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 2xl:px-0 py-20"
       >
         <div className="mb-10 flex flex-col items-start gap-3">
           <Badge variant="secondary" className="gap-1.5">
@@ -245,7 +252,7 @@ export default function Page() {
       {/* Install */}
       <section
         id="install"
-        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 2xl:px-0 py-20"
       >
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="flex flex-col items-start gap-4">
@@ -292,7 +299,7 @@ pnpm dlx shadcn@latest add dialog sheet tabs`}
       {/* CTA */}
       <section
         id="themes"
-        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 pb-24"
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 2xl:px-0 pb-24"
       >
         <Card className="items-center gap-6 bg-primary p-10 text-center text-primary-foreground ring-primary sm:p-16">
           <CardTitle className="text-2xl font-semibold tracking-tight text-primary-foreground sm:text-3xl">
@@ -314,7 +321,7 @@ pnpm dlx shadcn@latest add dialog sheet tabs`}
 
       {/* Footer */}
       <footer className="border-t border-border/60">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-6 2xl:px-0 py-8 sm:flex-row">
           <div className="flex items-center gap-2 font-heading text-sm font-semibold">
             <span className="grid size-6 place-items-center rounded-md bg-primary text-xs font-bold text-primary-foreground">
               e

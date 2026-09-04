@@ -8,7 +8,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { getLibraryComponents } from "@/lib/component-library";
-import { ThemeToggle } from "../theme-toggle";
+import { ThemeToggle } from "../../components/theme-toggle";
+import { LogoMain } from "@/components/logo-main";
 
 export default async function ComponentsLayout({
   children,
@@ -21,15 +22,7 @@ export default async function ComponentsLayout({
     <div className="flex min-h-dvh flex-col">
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-md">
         <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-6 2xl:px-0">
-          <Link
-            href="/"
-            className="flex items-center gap-2 font-heading text-lg font-semibold tracking-tight"
-          >
-            <span className="grid size-7 place-items-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-              e
-            </span>
-            <span>e.components</span>
-          </Link>
+          <LogoMain />
 
           <div className="flex items-center gap-2">
             <Link
